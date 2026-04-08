@@ -29,6 +29,7 @@ This program runs the following ADB commands in order.
 
 You can run these commands manually from within the toolkit folder if you copy the apk, user file, streamedimages folder, unitycache folder and streamableemojis folder into the main tool directory.
 Your directory should look like this if you plan on doing this manually for any reason!
+
 <img width="381" height="177" alt="{1AF80617-016E-48DA-AD51-4E959617A83D}" src="https://github.com/user-attachments/assets/6ae697f6-bfea-416d-b4e0-e1573fddba5c" />
 
 
