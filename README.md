@@ -43,7 +43,7 @@ adb.exe push -a -p streamedimages /sdcard/Android/data/com.spaceapegames.beatsta
 
 adb.exe push -a -p UnityCache /sdcard/unitycache
 
-adb.exe shell mv /sdcard/unitycache /sdcard/Android/data/com.spaceapegames.beatstar/files
+adb.exe shell mv /sdcard/unitycache/unitycache /sdcard/Android/data/com.spaceapegames.beatstar/files
 
 adb.exe push -a -p "user" /sdcard/Beatstar
 
