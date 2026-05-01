@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BeatClone Install Tool.exe" size="140200">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BeatClone Install Tool.exe" size="139688">
       <assemblyIdentity name="BeatClone Install Tool" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8Dh8WhEJu2vyCDcKi2ycgV9I4fkjx0jEMx7w/Y7VKAY=</dsig:DigestValue>
+        <dsig:DigestValue>XrOCbfPpkTMKepzj9xgk0nG3zhMBBxYt8weSFL+Jn/U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

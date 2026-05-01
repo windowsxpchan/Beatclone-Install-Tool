@@ -145,7 +145,7 @@ namespace BeatClone_Install_Tool
         }
 
         // ==========================================
-        // DEPLOY ASSETS (TEMP FOLDER METHOD)
+        // DEPLOY ASSETS (NEW APK METHOD)
         // ==========================================
         private async void DeployAssetsButton_Click(object sender, RoutedEventArgs e)
         {
@@ -168,12 +168,11 @@ namespace BeatClone_Install_Tool
             ZipFile.ExtractToDirectory(zipPath, extractPath);
             Log("Extraction complete.");
 
-            string tempDevicePath = "/sdcard/beatstar_temp";
-            string finalPath = "/sdcard/Android/data/com.spaceapegames.beatstar/files";
+            string finalPath = "/sdcard/beatstar/files";
 
-            Log("Preparing temp folder on device...");
-            await RunAdb($"shell rm -r \"{tempDevicePath}\"");
-            await RunAdb($"shell mkdir -p \"{tempDevicePath}\"");
+            Log("Creating folder...");
+            await RunAdb($"shell rm -r \"{finalPath}\"");
+            await RunAdb($"shell mkdir -p \"{finalPath}\"");
 
             var folders = Directory.GetDirectories(extractPath);
             int total = folders.Length;
@@ -185,14 +184,14 @@ namespace BeatClone_Install_Tool
                 ProgressBar.Value = 0;
             });
 
-            Log("Pushing folders to temp location...");
+            Log("Pushing folders to location...");
 
             foreach (var folder in folders)
             {
                 string folderName = Path.GetFileName(folder);
                 Log("Pushing: " + folderName);
 
-                await RunAdb($"push \"{folder}\" \"{tempDevicePath}\"");
+                await RunAdb($"push \"{folder}\" \"{finalPath}\"");
 
                 current++;
                 Dispatcher.Invoke(() =>
@@ -200,16 +199,7 @@ namespace BeatClone_Install_Tool
                     ProgressBar.Value = current;
                 });
             }
-
-            Log("Moving files into Android/data...");
-
-            await RunAdb($"shell mkdir -p \"{finalPath}\"");
-            await RunAdb($"shell mv \"{tempDevicePath}\"/* \"{finalPath}\"/");
-
-            Log("Cleaning up temp folder...");
-            await RunAdb($"shell rm -r \"{tempDevicePath}\"");
-
-            Log("Deployment complete.");
+            Log("Deployment complete. Please open the game and allow your assets to sync fully!");
             SetBusyState(false);
         }
 
