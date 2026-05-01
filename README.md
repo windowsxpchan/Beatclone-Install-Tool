@@ -37,13 +37,11 @@ adb.exe install beatstar.apk
 
 adb.exe shell cmd appops set --uid com.spaceapegames.beatstar MANAGE_EXTERNAL_STORAGE allow
 
-adb.exe push -a -p streamableemojis /sdcard/Android/data/com.spaceapegames.beatstar/files
+adb.exe push -a -p streamableemojis /sdcard/Beatstar
 
-adb.exe push -a -p streamedimages /sdcard/Android/data/com.spaceapegames.beatstar/files
+adb.exe push -a -p streamedimages /sdcard/Beatstar
 
-adb.exe push -a -p UnityCache /sdcard/unitycache
-
-adb.exe shell mv /sdcard/unitycache/unitycache /sdcard/Android/data/com.spaceapegames.beatstar/files
+adb.exe push -a -p UnityCache /sdcard/Beatstar
 
 adb.exe push -a -p "user" /sdcard/Beatstar
 
