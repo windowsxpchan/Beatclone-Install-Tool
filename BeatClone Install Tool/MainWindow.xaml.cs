@@ -226,6 +226,42 @@ namespace BeatClone_Install_Tool
         }
 
         // ==========================================
+        // COPY CUSTOM CONTENT
+        // ==========================================
+        private async void CopyCustomButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show(
+                "WARNING:\n\n" +
+                "Custom content will overwrite existing game assets.\n" +
+                "Please ensure you have extracted the zip file and select only the raw asset file.\n\nIf you are importing multiple files, please repeat this process for each file to ensure a successful import.\n\n"+
+                "Do you want to continue?",
+                "Custom Content Warning",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning
+            );
+
+            if (result != MessageBoxResult.Yes)
+                return;
+
+            var dialog = new Microsoft.Win32.OpenFileDialog();
+
+            if (dialog.ShowDialog() != true)
+                return;
+
+            ResetProgress();
+            SetBusyState(true);
+
+            string filePath = dialog.FileName;
+            string devicePath = "/Android/data/com.spaceapegames.beatstar/files/streamedimages";
+
+            await RunAdb($"push \"{filePath}\" \"{devicePath}\"");
+
+            Log("Custom Content copied successfully. Please refer to the message where you downloaded this content from to check which original asset has been overwritten!");
+
+            SetBusyState(false);
+        }
+
+        // ==========================================
         // REBOOT DEVICE
         // ==========================================
         private async void RebootButton_Click(object sender, RoutedEventArgs e)

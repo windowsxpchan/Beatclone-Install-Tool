@@ -46,31 +46,36 @@
 
             <Button x:Name="InstallApkButton"
             Content="Install APK"
-            Width="120"
+            Width="86"
             Margin="0,0,10,0"
             Click="InstallApkButton_Click"/>
 
             <Button x:Name="DeployAssetsButton"
             Content="Deploy Assets"
-            Width="120"
+            Width="98"
             Margin="0,0,10,0"
             Click="DeployAssetsButton_Click"/>
 
             <Button x:Name="CopyUserFileButton"
             Content="Copy User File"
-            Width="120"
+            Width="90"
             Margin="0,0,10,0"
             Click="CopyUserFileButton_Click"/>
 
+            <Button x:Name="CopyCustomButton"
+            Content="Import Custom Content"
+            Width="167"
+            Margin="0,0,10,0"
+            Click="CopyCustomButton_Click"/>
+            
             <Button x:Name="RebootButton"
             Content="Reboot Device"
             Width="120"
             Margin="0,0,10,0"
             Click="RebootButton_Click"/>
-
             <Button x:Name="ClearLogButton"
             Content="Clear"
-            Width="60"
+            Width="43"
             Click="ClearLogButton_Click"/>
         </StackPanel>
 
