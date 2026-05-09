@@ -233,7 +233,7 @@ namespace BeatClone_Install_Tool
             MessageBoxResult result = MessageBox.Show(
                 "WARNING:\n\n" +
                 "Custom content will overwrite existing game assets.\n" +
-                "Please ensure you have extracted the zip file and select only the raw asset file.\n\nIf you are importing multiple files, please repeat this process for each file to ensure a successful import.\n\n"+
+                "Please ensure you have extracted the zip file and select only the raw asset file.\n\nIf you are importing multiple files, please repeat this process for each file to ensure a successful import.\n\n THIS IS NOT FOR IMPORTING SONGS!\n\n"+
                 "Do you want to continue?",
                 "Custom Content Warning",
                 MessageBoxButton.YesNo,
